@@ -33,8 +33,18 @@ By using three variable K-Map, we can get the simplified expression for next sta
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
 **Procedure**
+1.Declare J, K, clk, Q.
 
-/* write all the steps invloved */
+2.Use always @(posedge clk).
+
+3.Inside, write if (J==0 && K==0) → hold.
+
+4.else if (J==0 && K==1) → reset.
+
+5.else if (J==1 && K==0) → set.
+
+6.else → toggle Q.
+
 
 **PROGRAM**
 module jk_ff (
@@ -65,4 +75,4 @@ Register number:25016067
 <img width="1919" height="1079" alt="Screenshot 2025-11-23 171242" src="https://github.com/user-attachments/assets/13be580f-ba82-44cd-b06b-637fbe298012" />
 
 **RESULTS**
-The implement of JK flipflop using verilog and validating their functionality using their functional tables
+The implement of JK flipflop using verilog and validating their functionality using their functional tables is verified.
